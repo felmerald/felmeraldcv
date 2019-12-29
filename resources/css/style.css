@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Pacifico&display=swap");
 body, html {
-  background-color: #0b121c;
+  background-color: #010204;
   height: 100%;
   margin: 0;
 }
@@ -107,17 +107,191 @@ p, a, ul {
   }
 }
 
-.first-section {
-  margin-top: 32px;
+#section1 .myabout {
+  height: auto;
+  width: 100%;
+  margin-top: 15px;
 }
 
-.first-section p {
-  color: #ffffff;
-  font-size: 32px;
-  text-transform: uppercase;
-  font-weight: bold;
+@media only screen and (max-width: 767px) {
+  #section1 .myabout {
+    height: 100px;
+  }
+}
+
+#section1 .container {
+  margin-top: -83px;
+}
+
+@media only screen and (max-width: 767px) {
+  #section1 .container {
+    margin-top: -62px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  #section1 .container {
+    margin-top: -57px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #section1 .container {
+    margin-top: -64px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1279.78px) and (orientation: portrait) {
+  #section1 .container {
+    margin-top: -64px;
+  }
+}
+
+#section1 .container p.title {
   text-align: center;
-  letter-spacing: 2px;
+  color: #ffa200;
+  font-size: 32px;
+}
+
+@media only screen and (max-width: 767px) {
+  #section1 .container p.title {
+    font-size: 14px;
+  }
+}
+
+#section1 .container .row {
+  position: relative;
+  top: 100px;
+}
+
+@media only screen and (max-width: 767px) {
+  #section1 .container .row {
+    top: 70px;
+  }
+}
+
+#section1 .container .row p.description {
+  color: #ffffff;
+}
+
+#section1 .container .row p.description strong {
+  color: #fe9714;
+}
+
+@media only screen and (max-width: 767px) {
+  #section1 .container .row .col-sm-5 {
+    display: none;
+  }
+}
+
+#section2 .container {
+  position: relative;
+  top: 5%;
+}
+
+#section2 .container p.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+#section2 .link a {
+  color: white;
+  text-decoration: none;
+}
+
+.imagecontainer {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ff9e05;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.imagecontainer:hover .overlay {
+  width: 100%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.text a {
+  text-decoration: none;
+  color: white;
+}
+
+a.none {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  p.haspadding {
+    padding-left: 15px;
+  }
+}
+
+.img-responsive {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .img-responsive {
+    display: none;
+  }
+}
+
+ul.myul {
+  color: #ff9e05;
+  font-size: 12px;
+}
+
+ul.myul li a {
+  color: #ff9e05;
+}
+
+ul.myul li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+ul.myul li:hover {
+  color: white;
+}
+
+.modal-content {
+  background-color: #0b1521 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

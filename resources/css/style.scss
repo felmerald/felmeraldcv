@@ -1,9 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Pacifico&display=swap');
 body,html{
-    background-color: #0b121c;
+    background-color: #010204;
     height: 100%;
     margin: 0;
+}
+@mixin cellphone {
+    @media only screen and (max-width:767px){
+        @content;
+    }
+}
+@mixin cellphone_portrait{
+    @media (max-width: 575.98px) and (orientation:portrait){
+      @content;
+    }
+   
+  }
+@mixin cellphone_landscape{
+   @media (min-width: 576px) and (max-width: 767.98px) and (orientation:landscape){
+     @content;
+   }
+ }
+@mixin tablet {
+    @media only screen and (min-width:768px) and (max-width:991.98px){
+        @content;
+    }
+}
+@mixin tablet_landscape{
+    @media only screen and (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+        @content;
+    }
+}
+@mixin ipad_pro{
+    @media (min-width: 992px) and (max-width: 1279.78px) and (orientation:portrait){
+        @content;
+    }
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Pacifico', cursive;
@@ -43,7 +74,7 @@ p,a,ul{
   .banner-container{
       position: absolute;
       top:30%;
-      @media only screen and (max-width:767px){
+      @include cellphone{
           top:15%;
           padding-left:15px;
       }
@@ -57,7 +88,7 @@ p,a,ul{
           span{
               font-size:120px;
               color:#f7a000;
-              @media only screen and (max-width:767px){
+              @include cellphone{
                   font-size:70px;
               }
           }
@@ -67,7 +98,7 @@ p,a,ul{
           font-size:32px;
           font-weight: bold;
           text-align: right;
-          @media only screen and (max-width:767px){
+          @include cellphone{
               text-align: unset;
           }
       }
@@ -75,20 +106,158 @@ p,a,ul{
          @extend .mybutton;
          position: relative;
          top:50px;
-         @media only screen and (max-width:767px){
+         @include cellphone{
             padding: 10px;
          }
      }
   }
 }
-.first-section{
-    margin-top:32px;
-    p{
-        color:#ffffff;
-        font-size:32px;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
-        letter-spacing: 2px;
+#section1{
+    .myabout{
+        height:auto;
+        width:100%;
+        margin-top:15px;
+        @include cellphone{
+            height:100px;
+        }
+    }
+    .container{
+        margin-top: -83px;
+        @include cellphone{
+            margin-top: -62px; 
+        }
+        @include tablet{
+            margin-top: -57px;
+        }
+        @include tablet_landscape{
+            margin-top: -64px;
+        }
+        @include ipad_pro{
+            margin-top: -64px;
+        }
+       p.title{
+           text-align:center;
+           color:#ffa200;
+           font-size: 32px;
+           @include cellphone{
+            font-size: 14px;
+           }
+       }
+       .row{
+           position: relative;
+           top: 100px;
+           @include cellphone{
+               top:70px;
+           }
+           p.description{
+               color:#ffffff;
+               strong{
+                   color:#fe9714;
+               }
+           }
+           .col-sm-5{
+               @include cellphone{
+                   display: none;
+               }
+           }
+       }
     }
 }
+#section2{
+    .container{
+        position: relative;
+        top:5%;
+        p.title{
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color:#ffffff;
+            text-transform: uppercase;
+        }
+    }
+    .link{
+        a{
+            color:white;
+            text-decoration: none;
+        }
+    }
+}
+.imagecontainer {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ff9e05;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .imagecontainer:hover .overlay {
+    width: 100%;
+  }
+  
+  .text {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    a{
+        text-decoration: none;
+        color: white;
+    }
+  }
+  a.none{
+      text-decoration: none;
+  }
+  p.haspadding{
+      @include cellphone{
+          padding-left:15px;
+      }
+  }
+  .img-responsive{
+      width:50%;
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include cellphone{
+        display: none;
+    }
+  }
+  ul.myul{
+      color:#ff9e05;
+      font-size: 12px;
+      li{
+          a{
+            color:#ff9e05;
+            &:hover{
+                color:white;
+                text-decoration: none;
+            }
+          }
+          &:hover{
+            color:white;
+          }
+      }
+  }
+  .modal-content{
+      background-color: #0b1521 !important;
+  }
+  
